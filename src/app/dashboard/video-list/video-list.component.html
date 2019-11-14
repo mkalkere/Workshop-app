@@ -1,0 +1,9 @@
+<h3>app-video-list</h3>
+
+<button
+  *ngFor="let v of videos"
+  (click)="selectVideo(v)"
+  [class.selected]="v === (selectedVideo | async)"
+>
+  <app-video [video] = "v"></app-video>
+</button>

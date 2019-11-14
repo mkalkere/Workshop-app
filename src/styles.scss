@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  app-root,
+  app-video-dashboard,
+  app-video-list,
+  app-video-player,
+  app-stat-filters
+  {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid purple;
+    border-radius: 10px;
+  }
+  
+  app-video-dashboard {
+    display: grid;
+    grid:
+      " header header header  " min-content
+      " list   player filters "
+      / 1fr    2fr    1fr
+    ;
+    gap: 10px;
+  
+    header { grid-area: header; }
+    app-video-list   { grid-area: list; }
+    app-video-player { grid-area: player; }
+    app-stat-filters { grid-area: filters; }
+  }
+  
+  .selected {
+    background-color: teal;
+    color: white;
+  }
+  
+  button {
+    display: inline-block;
+    border: none;
+    padding: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+  }
